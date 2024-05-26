@@ -9,22 +9,23 @@ Collection of [Bevy][bevy] plugins offering generic asset loaders for common fil
 
 Supported formats:
 
-| format     | feature    | example                                |
-|:-----------|:-----------|:---------------------------------------|
-| `json`     | `json`     | [`json.rs`](./examples/json.rs)        |
-| `msgpack`  | `msgpack`  | [`msgpack.rs`](./examples/msgpack.rs)  |
-| `postcard`| `postcard`  | [`postcard.rs`](./examples/postcard.rs)|
-| `ron`      | `ron`      | [`ron.rs`](./examples/ron.rs)          |
-| `toml`     | `toml`     | [`toml.rs`](./examples/toml.rs)        |
-| `xml`      | `xml`      | [`xml.rs`](./examples/xml.rs)          |
-| `yaml`     | `yaml`     | [`yaml.rs`](./examples/yaml.rs)        |
-| `csv`      | `csv`      | [`csv.rs`](./examples/csv.rs)          |
+| format     | feature    | example                                 |
+| :--------- | :--------- | :-------------------------------------- |
+| `json`     | `json`     | [`json.rs`](./examples/json.rs)         |
+| `msgpack`  | `msgpack`  | [`msgpack.rs`](./examples/msgpack.rs)   |
+| `postcard` | `postcard` | [`postcard.rs`](./examples/postcard.rs) |
+| `ron`      | `ron`      | [`ron.rs`](./examples/ron.rs)           |
+| `toml`     | `toml`     | [`toml.rs`](./examples/toml.rs)         |
+| `xml`      | `xml`      | [`xml.rs`](./examples/xml.rs)           |
+| `yaml`     | `yaml`     | [`yaml.rs`](./examples/yaml.rs)         |
+| `csv`      | `csv`      | [`csv.rs`](./examples/csv.rs)           |
 
 ## Usage
 
 Enable the feature(s) for the format(s) that you want to use.
 
 Define the types that you would like to load from files and derive `serde::Deserialize`, `bevy::reflect::TypePath`, and `bevy::asset::Asset` for them.
+
 ```rust
 #[derive(serde::Deserialize, bevy::asset::Asset, bevy::reflect::TypePath)]
 struct Level {
@@ -34,6 +35,7 @@ struct Level {
 
 With the types ready, you can start adding asset plugins. Every plugin gets the asset type that it is supposed to load
 as a generic parameter. You can also configure custom file endings for each plugin:
+
 ```rust no_run
 use bevy::prelude::*;
 use bevy_common_assets::json::JsonAssetPlugin;
@@ -78,7 +80,7 @@ The main branch is compatible with the latest Bevy release.
 Compatibility of `bevy_common_assets` versions:
 
 | `bevy_common_assets` | `bevy` |
-|:---------------------|:-------|
+| :------------------- | :----- |
 | `0.10`               | `0.13` |
 | `0.8` - `0.9`        | `0.12` |
 | `0.7`                | `0.11` |
@@ -91,12 +93,7 @@ Compatibility of `bevy_common_assets` versions:
 
 ## License
 
-Dual-licensed under either of
-
-* Apache License, Version 2.0, ([LICENSE-APACHE](/LICENSE-APACHE) or https://www.apache.org/licenses/LICENSE-2.0)
-* MIT license ([LICENSE-MIT](/LICENSE-MIT) or https://opensource.org/licenses/MIT)
-
-at your option.
+- MIT license ([LICENSE](/LICENSE) or https://opensource.org/licenses/MIT)
 
 ## Contribution
 
